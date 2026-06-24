@@ -2,7 +2,7 @@ import api from "./api";
 
 const adminService = {
 
-    stats: async () => {
+    getStats: async () => {
         const response = await api.get(
             "/admin/stats"
         );

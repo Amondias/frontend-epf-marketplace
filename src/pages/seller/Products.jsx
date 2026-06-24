@@ -147,7 +147,7 @@ export default function Products() {
                                     <td className="p-3 space-x-2">
 
                                         <Link
-                                            to={`/seller/products/${product.id}/edit`}
+                                            to={`/seller/products/edit/${product.id}`}
                                             className="text-blue-600"
                                         >
                                             Modifier

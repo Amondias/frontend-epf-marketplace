@@ -28,12 +28,11 @@ import Statistics from "../pages/seller/Statistics";
 import SellerProducts from "../pages/seller/Products";
 import ProductCreate from "../pages/seller/ProductCreate";
 import ProductEdit from "../pages/seller/ProductEdit";
-import SellerOrders from "../pages/seller/SellerOrders";
+import SellerOrders from "../pages/seller/Orders";
 
 import AdminDashboard from "../pages/admin/Dashboard";
 import Users from "../pages/admin/Users";
 import Coupons from "../pages/admin/Coupons";
-import ProductsModeration from "../pages/admin/ProductsModeration";
 
 import Unauthorized from "../pages/errors/Unauthorized";
 import NotFound from "../pages/errors/NotFound";
@@ -231,15 +230,6 @@ export default function AppRoutes() {
                 element={
                     <AdminRoute>
                         <Coupons />
-                    </AdminRoute>
-                }
-            />
-
-            <Route
-                path="/admin/products"
-                element={
-                    <AdminRoute>
-                        <ProductsModeration />
                     </AdminRoute>
                 }
             />
