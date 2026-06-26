@@ -33,6 +33,24 @@ const orderService = {
         );
 
         return response.data;
+    },
+
+    getSellerOrders: async (params = {}) => {
+        const response = await api.get(
+            "/seller/orders",
+            { params }
+        );
+
+        return response.data;
+    },
+
+    updateStatus: async (id, status) => {
+        const response = await api.put(
+            `/orders/${id}/status`,
+            { status }
+        );
+
+        return response.data;
     }
 
 };

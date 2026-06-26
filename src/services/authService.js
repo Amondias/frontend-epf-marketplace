@@ -18,15 +18,9 @@ const authService = {
     },
 
     updateProfile: async (data) => {
-
         const response = await api.put(
             "/auth/profile",
-            data,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            }
+            data
         );
 
         return response.data;

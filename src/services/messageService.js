@@ -10,9 +10,10 @@ const messageService = {
         return response.data;
     },
 
-    getConversation: async (userId) => {
+    getConversation: async (userId, params = {}) => {
         const response = await api.get(
-            `/messages/with/${userId}`
+            `/messages/with/${userId}`,
+            { params }
         );
 
         return response.data;

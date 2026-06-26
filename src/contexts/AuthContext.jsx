@@ -63,7 +63,15 @@ export default function AuthProvider({ children }) {
 
     const register = async (data) => {
 
-        return await authService.register(data);
+        const response = await authService.register(data);
+
+        if (response?.token) {
+            localStorage.setItem("token", response.token);
+            localStorage.setItem("user", JSON.stringify(response.user ?? response));
+            setUser(response.user ?? response);
+        }
+
+        return response;
 
     };
 

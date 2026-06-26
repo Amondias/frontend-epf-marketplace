@@ -10,9 +10,10 @@ const adminService = {
         return response.data;
     },
 
-    users: async () => {
+    users: async (params = {}) => {
         const response = await api.get(
-            "/admin/users"
+            "/admin/users",
+            { params }
         );
 
         return response.data;
@@ -55,9 +56,10 @@ const adminService = {
         return response.data;
     },
 
-    coupons: async () => {
+    coupons: async (params = {}) => {
         const response = await api.get(
-            "/admin/coupons"
+            "/admin/coupons",
+            { params }
         );
 
         return response.data;

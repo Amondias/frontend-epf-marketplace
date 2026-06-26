@@ -26,30 +26,18 @@ const productService = {
     },
 
     createProduct: async (data) => {
-
         const response = await api.post(
             "/products",
-            data,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            }
+            data
         );
 
         return response.data;
     },
 
     updateProduct: async (id, data) => {
-
-        const response = await api.post(
+        const response = await api.put(
             `/products/${id}`,
-            data,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            }
+            data
         );
 
         return response.data;

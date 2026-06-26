@@ -4,41 +4,32 @@ import ProtectedRoute from "./ProtectedRoute";
 import SellerRoute from "./SellerRoute";
 import AdminRoute from "./AdminRoute";
 
-import Home from "../pages/public/Home";
-import Products from "../pages/public/Products";
-import ProductDetails from "../pages/public/ProductDetails";
-import Categories from "../pages/public/Categories";
-import Search from "../pages/public/Search";
-import SellerProfile from "../pages/public/SellerProfile";
+import HomePage from "../pages/HomePage";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
+import ProductsPage from "../pages/ProductsPage";
+import ProductDetailsPage from "../pages/ProductDetailsPage";
+import ProfilePage from "../pages/ProfilePage";
+import UnauthorizedPage from "../pages/UnauthorizedPage";
 
-import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
+import CartPage from "../pages/buyer/CartPage";
+import CheckoutPage from "../pages/buyer/CheckoutPage";
+import FavoritesPage from "../pages/buyer/FavoritesPage";
+import MessagesPage from "../pages/buyer/MessagesPage";
+import OrdersPage from "../pages/buyer/OrdersPage";
 
-import Profile from "../pages/profile/Profile";
+import SellerDashboardPage from "../pages/seller/DashboardPage";
+import SellerProductsPage from "../pages/seller/ProductsPage";
+import CreateProductPage from "../pages/seller/CreateProductPage";
+import EditProductPage from "../pages/seller/EditProductPage";
+import SellerOrdersPage from "../pages/seller/OrdersPage";
 
-import Cart from "../pages/buyer/Cart";
-import Checkout from "../pages/buyer/Checkout";
-import Orders from "../pages/buyer/Orders";
-import OrderShow from "../pages/buyer/OrderShow";
-import Favorites from "../pages/buyer/Favorites";
-import Messages from "../pages/buyer/Messages";
-
-import Dashboard from "../pages/seller/Dashboard";
-import Statistics from "../pages/seller/Statistics";
-import SellerProducts from "../pages/seller/Products";
-import ProductCreate from "../pages/seller/ProductCreate";
-import ProductEdit from "../pages/seller/ProductEdit";
-import SellerOrders from "../pages/seller/Orders";
-
-import AdminDashboard from "../pages/admin/Dashboard";
-import Users from "../pages/admin/Users";
-import Coupons from "../pages/admin/Coupons";
-
-import Unauthorized from "../pages/errors/Unauthorized";
-import NotFound from "../pages/errors/NotFound";
+import AdminDashboardPage from "../pages/admin/DashboardPage";
+import AdminProductsPage from "../pages/admin/ProductsPage";
+import AdminUsersPage from "../pages/admin/UsersPage";
+import AdminCouponsPage from "../pages/admin/CouponsPage";
 
 export default function AppRoutes() {
-
     return (
         <Routes>
 
@@ -46,42 +37,32 @@ export default function AppRoutes() {
 
             <Route
                 path="/"
-                element={<Home />}
+                element={<HomePage />}
             />
 
             <Route
                 path="/products"
-                element={<Products />}
+                element={<ProductsPage />}
             />
 
             <Route
                 path="/products/:id"
-                element={<ProductDetails />}
-            />
-
-            <Route
-                path="/categories"
-                element={<Categories />}
-            />
-
-            <Route
-                path="/search"
-                element={<Search />}
-            />
-
-            <Route
-                path="/seller/:id"
-                element={<SellerProfile />}
+                element={<ProductDetailsPage />}
             />
 
             <Route
                 path="/login"
-                element={<Login />}
+                element={<LoginPage />}
             />
 
             <Route
                 path="/register"
-                element={<Register />}
+                element={<RegisterPage />}
+            />
+
+            <Route
+                path="/unauthorized"
+                element={<UnauthorizedPage />}
             />
 
             {/* USER */}
@@ -90,7 +71,7 @@ export default function AppRoutes() {
                 path="/profile"
                 element={
                     <ProtectedRoute>
-                        <Profile />
+                        <ProfilePage />
                     </ProtectedRoute>
                 }
             />
@@ -99,7 +80,7 @@ export default function AppRoutes() {
                 path="/cart"
                 element={
                     <ProtectedRoute>
-                        <Cart />
+                        <CartPage />
                     </ProtectedRoute>
                 }
             />
@@ -108,7 +89,7 @@ export default function AppRoutes() {
                 path="/checkout"
                 element={
                     <ProtectedRoute>
-                        <Checkout />
+                        <CheckoutPage />
                     </ProtectedRoute>
                 }
             />
@@ -117,16 +98,7 @@ export default function AppRoutes() {
                 path="/orders"
                 element={
                     <ProtectedRoute>
-                        <Orders />
-                    </ProtectedRoute>
-                }
-            />
-
-            <Route
-                path="/orders/:id"
-                element={
-                    <ProtectedRoute>
-                        <OrderShow />
+                        <OrdersPage />
                     </ProtectedRoute>
                 }
             />
@@ -135,7 +107,7 @@ export default function AppRoutes() {
                 path="/favorites"
                 element={
                     <ProtectedRoute>
-                        <Favorites />
+                        <FavoritesPage />
                     </ProtectedRoute>
                 }
             />
@@ -144,7 +116,7 @@ export default function AppRoutes() {
                 path="/messages"
                 element={
                     <ProtectedRoute>
-                        <Messages />
+                        <MessagesPage />
                     </ProtectedRoute>
                 }
             />
@@ -155,16 +127,7 @@ export default function AppRoutes() {
                 path="/seller/dashboard"
                 element={
                     <SellerRoute>
-                        <Dashboard />
-                    </SellerRoute>
-                }
-            />
-
-            <Route
-                path="/seller/statistics"
-                element={
-                    <SellerRoute>
-                        <Statistics />
+                        <SellerDashboardPage />
                     </SellerRoute>
                 }
             />
@@ -173,7 +136,7 @@ export default function AppRoutes() {
                 path="/seller/products"
                 element={
                     <SellerRoute>
-                        <SellerProducts />
+                        <SellerProductsPage />
                     </SellerRoute>
                 }
             />
@@ -182,7 +145,7 @@ export default function AppRoutes() {
                 path="/seller/products/create"
                 element={
                     <SellerRoute>
-                        <ProductCreate />
+                        <CreateProductPage />
                     </SellerRoute>
                 }
             />
@@ -191,7 +154,7 @@ export default function AppRoutes() {
                 path="/seller/products/edit/:id"
                 element={
                     <SellerRoute>
-                        <ProductEdit />
+                        <EditProductPage />
                     </SellerRoute>
                 }
             />
@@ -200,7 +163,7 @@ export default function AppRoutes() {
                 path="/seller/orders"
                 element={
                     <SellerRoute>
-                        <SellerOrders />
+                        <SellerOrdersPage />
                     </SellerRoute>
                 }
             />
@@ -211,7 +174,16 @@ export default function AppRoutes() {
                 path="/admin/dashboard"
                 element={
                     <AdminRoute>
-                        <AdminDashboard />
+                        <AdminDashboardPage />
+                    </AdminRoute>
+                }
+            />
+
+            <Route
+                path="/admin/products"
+                element={
+                    <AdminRoute>
+                        <AdminProductsPage />
                     </AdminRoute>
                 }
             />
@@ -220,7 +192,7 @@ export default function AppRoutes() {
                 path="/admin/users"
                 element={
                     <AdminRoute>
-                        <Users />
+                        <AdminUsersPage />
                     </AdminRoute>
                 }
             />
@@ -229,21 +201,14 @@ export default function AppRoutes() {
                 path="/admin/coupons"
                 element={
                     <AdminRoute>
-                        <Coupons />
+                        <AdminCouponsPage />
                     </AdminRoute>
                 }
             />
 
-            {/* ERRORS */}
-
-            <Route
-                path="/unauthorized"
-                element={<Unauthorized />}
-            />
-
             <Route
                 path="*"
-                element={<NotFound />}
+                element={<HomePage />}
             />
 
         </Routes>
